@@ -28,6 +28,15 @@ function deleteSelectedRow() {
     })
 }
 
+function validate() {
+    var enabled = document.getElementById('isEnabled')
+    if (enabled.checked == 1) {
+        return 1;
+    } else {
+        return 0;
+    }
+};
+
 function resetTeks() {
     $('#txtUsername').val('');
     $('#txtPassword').val('');
@@ -62,13 +71,15 @@ function submit() {
                     )
                 } else {
                     var randomId = 100 + ~~(Math.random() * 100)
+                    var opalll = validate();
+                    
                     $('#tblMaster').bootstrapTable('insertRow', {
-                        index: 1,
+                        index: 0,
                         row: {
                             id: randomId,
                             username: $('#txtUsername').val(),
                             password: $('#txtPassword').val(),
-                            is_enabled: 1
+                            is_enabled: opalll
                         }
                     })
                 }
