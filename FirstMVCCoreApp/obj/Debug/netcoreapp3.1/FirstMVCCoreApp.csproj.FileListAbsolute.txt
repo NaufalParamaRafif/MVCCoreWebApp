@@ -156,7 +156,6 @@ D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\re
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Data.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
-D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.DiagnosticSource.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
@@ -223,7 +222,6 @@ D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\re
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
-D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
@@ -355,3 +353,7 @@ D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\obj\Debug\netcoreapp3.1\Fi
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\obj\Debug\netcoreapp3.1\FirstMVCCoreApp.dll
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\obj\Debug\netcoreapp3.1\FirstMVCCoreApp.pdb
 D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\obj\Debug\netcoreapp3.1\FirstMVCCoreApp.genruntimeconfig.cache
+D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\learn-practice\mvc\FirstMVCCoreApp\FirstMVCCoreApp\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll

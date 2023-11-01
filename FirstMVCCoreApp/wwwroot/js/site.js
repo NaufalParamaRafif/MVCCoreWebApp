@@ -2,41 +2,6 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-
-//var $table = $('#tblMaster');
-//var $button = $('#btnDelete');
-
-//$(function () {
-//    $button.click(function () {
-//        var ids = $.map($table.bootstrapTable('getSelections'), function (row) {
-//            return row.id
-//        })
-//        $table.bootstrapTable('remove', {
-//            field: 'id',
-//            values: ids
-//        })
-//    })
-//})
-
-function deleteSelectedRow() {
-    var ids = $.map($('#tblMaster').bootstrapTable('getSelections'), function (row) {
-        return row.id
-    })
-    $('#tblMaster').bootstrapTable('remove', {
-        field: 'id',
-        values: ids
-    })
-}
-
-function validate() {
-    var enabled = document.getElementById('isEnabled')
-    if (enabled.checked == 1) {
-        return 1;
-    } else {
-        return 0;
-    }
-};
-
 function resetTeks() {
     $('#txtUsername').val('');
     $('#txtPassword').val('');
@@ -71,15 +36,13 @@ function submit() {
                     )
                 } else {
                     var randomId = 100 + ~~(Math.random() * 100)
-                    var opalll = validate();
-                    
                     $('#tblMaster').bootstrapTable('insertRow', {
-                        index: 0,
+                        index: 1,
                         row: {
                             id: randomId,
                             username: $('#txtUsername').val(),
                             password: $('#txtPassword').val(),
-                            is_enabled: opalll
+                            is_enabled: 1
                         }
                     })
                 }
@@ -91,8 +54,53 @@ function submit() {
     });
 }
 
+function deleteRow(id) {
+    $('#tblMaster').bootstrapTable('removeByUniqueId', id);
+}
+
+function editRow(id) {
+    let tableRow = $('#tblMaster').bootstrapTable('getRowByUniqueId', id);
+    // ketika kita klik edit kita mau kolomnya terisi atribut-atribut object saat ini
+    $('#txtUsername').val(tableRow.username);
+    $('#txtPassword').val(tableRow.password);
+    if (tableRow.is_enabled == 1) {
+        $('#isEnabled').prop('checked', true);
+    } else {
+        $('#isEnabled').prop('checked', false);
+    }
+    // ketika semuanya sudah terisi sesuai dengan object saat ini, kita ingin tombolnya berubah menjadi tombol update
+    document.getElementById("btnSubmit").style.display = "none";
+    document.getElementById("btnUpdate").style.display = "inline-block";
+    let tableIndex;
+    $('#tblMaster').on('click-row.bs.table', function (e, row, $element) {
+        tableIndex = $element.data('index');
+    });
+    // ketika kita update kita mau objek saat ini terisi dengan apa yang tersedia di kolom yang sudah terisi
+    $('#btnUpdate').click(function () {
+        $('#tblMaster').bootstrapTable('updateRow', {
+            index: tableIndex,
+            row: {
+                id: row.id,
+                username: $('#txtUsername').val(),
+                password: $('#txtPassword').val(),
+                is_enabled: 1
+             }
+        })
+        document.getElementById("btnSubmit").style.display = "inline-block";
+        document.getElementById("btnUpdate").style.display = "none";
+        resetTeks();
+    })
+}
+
 $(document).ready(function () {
     resetTeks();
     add();
     submit();
 });
+
+function viewButton(value, row, index) {
+    console.log(row);
+    var html = '<button onclick="deleteRow(' + row.id + ')" class="delete btn btn-sm btn-danger">Delete</button>';
+    html = html + '<button onclick="editRow(' + row.id + ')" class="delete btn btn-sm btn-warning">Edit</button>';
+    return html;
+}
