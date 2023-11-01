@@ -2,6 +2,25 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+var MAIN = {
+    register: function () {
+        MAIN.UI.register();
+    },
+    UI: {
+        register: function () {
+
+        }
+    },
+    ROUTINES: {
+
+    },
+    EVENTS: {
+
+    }
+}
+$(document).ready(function () {
+    MAIN.register.apply();
+});
 function resetTeks() {
     $('#txtUsername').val('');
     $('#txtPassword').val('');
