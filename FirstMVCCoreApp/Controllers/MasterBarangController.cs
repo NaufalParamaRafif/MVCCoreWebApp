@@ -40,6 +40,7 @@ namespace FirstMVCCoreApp.Controllers
             return Json(new { data = result, status_code, message });
         }
 
+        [HttpPost]
         public async Task<IActionResult> Create(MasterBarang model)
         {
             var conn = new MySqlConnection(connectionMYSQL);
@@ -60,15 +61,14 @@ namespace FirstMVCCoreApp.Controllers
                 var sql = "";
                 if (count > 0)
                 {
-                    sql = "UPDATE mst_barang set stock_barang = stock_barang + " + model.stock_barang + " " +
-                        "where kode_barang = '" + model.kode_barang + "' AND is_enabled = 1";
-                    message = "Update";
+
+                    message = "Barang sudah ada";
                 }
                 else
                 {
-                    sql = "INSERT into mst_barang (kode_barang, nama_barang, stock_barang, harga_barang, " +
+                    sql = "INSERT into mst_barang (kode_barang, nama_barang, stock_on_hand, harga_barang, " +
                     " is_enabled, created_datetime, created_user) " +
-                    "values ('" + model.kode_barang + "', '" + model.nama_barang + "', '" + model.stock_barang + "', '" + model.harga_barang + "', 1, NOW(), 'SYSTEM')";
+                    "values ('" + model.kode_barang + "', '" + model.nama_barang + "',0, '" + model.harga_barang + "', 1, NOW(), 'SYSTEM')";
                     message = "Insert";
                 }
 

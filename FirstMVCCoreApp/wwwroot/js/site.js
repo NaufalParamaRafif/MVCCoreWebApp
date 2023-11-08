@@ -2,25 +2,6 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-var MAIN = {
-    register: function () {
-        MAIN.UI.register();
-    },
-    UI: {
-        register: function () {
-
-        }
-    },
-    ROUTINES: {
-
-    },
-    EVENTS: {
-
-    }
-}
-$(document).ready(function () {
-    MAIN.register.apply();
-});
 function resetTeks() {
     $('#txtUsername').val('');
     $('#txtPassword').val('');
@@ -72,6 +53,32 @@ function submit() {
         })
     });
 }
+function loadListData() {
+    $.ajax({
+        url: '/User/GetListData',
+        type: 'POST',
+        dataType: 'JSON',
+        success: function (res) {
+            console.log(res);
+            if (res.data !== null && res.data.length > 0) {
+                for (var i = 0; i < res.data.length; i++) {
+                    $('#tblMaster').bootstrapTable('insertRow', {
+                        index: res.data[i].id,
+                        row: {
+                            id: res.data[i].id,
+                            username: res.data[i].username,
+                            password: res.data[i].password,
+                            is_enabled: res.data[i].is_enabled
+                        }
+                    })
+                }
+            }
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    })
+}
 
 function deleteRow(id) {
     $('#tblMaster').bootstrapTable('removeByUniqueId', id);
@@ -111,11 +118,6 @@ function editRow(id) {
     })
 }
 
-$(document).ready(function () {
-    resetTeks();
-    add();
-    submit();
-});
 
 function viewButton(value, row, index) {
     console.log(row);
@@ -123,3 +125,9 @@ function viewButton(value, row, index) {
     html = html + '<button onclick="editRow(' + row.id + ')" class="delete btn btn-sm btn-warning">Edit</button>';
     return html;
 }
+$(document).ready(function () {
+    resetTeks();
+    add();
+    submit();
+    loadListData();
+});
